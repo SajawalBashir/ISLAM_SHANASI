@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "869451769784",
+    "project_id": "islam-shanasi",
+    "storage_bucket": "islam-shanasi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869451769784:android:7b13734def3468fd7f914d",
+        "android_client_info": {
+          "package_name": "com.example.islam_shanasi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869451769784-n3mmamr7rktjbop58h0cf2iqin10j3db.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.islam_shanasi",
+            "certificate_hash": "d2464fc1c783d5dff69fa80ffd4be47ac4292e8f"
+          }
+        },
+        {
+          "client_id": "869451769784-37hkjjeivqu40snra2ll9pgjjbmpqlnq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCM6KW_rTae0Tp7ADNwwpVfbWowIxV9Cps"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869451769784-37hkjjeivqu40snra2ll9pgjjbmpqlnq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

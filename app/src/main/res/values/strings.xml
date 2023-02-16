@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">ISLAM_SHANASI</string>
+
+    <string-array name="categories">
+        <item><italic>Not Selected</italic></item>
+        <item>Scholar</item>
+        <item>Non-Scholar</item>
+    </string-array>
+
+    <string-array name="Gender">
+        <item><italic>Not Selected</italic></item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string-array name="Cities">
+        <item><italic>Not Selected</italic></item>
+        <item>Lahore</item>
+        <item>Peshawar</item>
+        <item>Multan</item>
+        <item>Islamabad</item>
+        <item>Gujranwala</item>
+        <item>Karachi</item>
+        <item>Quetta</item>
+
+    </string-array>
+
+    <string-array name="Countries">
+        <item><italic>Not Selected</italic></item>
+        <item>Pakistan</item>
+    </string-array>
+
+    <string-array name="Fiqh">
+        <item><italic>Not Selected</italic></item>
+        <item>Fiqa-E-Hanafia</item>
+        <item>Fiqa-E-Jafferia</item>
+        <item>Fiqa-E-Ahmadiyya</item>
+    </string-array>
+</resources>
