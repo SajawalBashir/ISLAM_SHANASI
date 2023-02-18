@@ -100,6 +100,19 @@
             app:layout_constraintTop_toTopOf="@+id/scholarImageLayoutFinishImg"
             app:layout_constraintVertical_bias="0.451" />
 
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="* Maximum image size 500KB allowed"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/scholarImageLayoutFinishImg"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/scholarImageLayoutUploadBtn"
+            app:layout_constraintVertical_bias="0.512" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

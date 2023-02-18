@@ -16,11 +16,23 @@
         android:layout_marginBottom="50dp"
         android:background="@drawable/form_shape"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0">
+
+        <ProgressBar
+            android:id="@+id/profilePicProgressbar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.208" />
 
         <ImageView
             android:id="@+id/profilePicBackImg"
@@ -115,6 +127,19 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/profilePicLayoutUploadBtn"
             app:layout_constraintVertical_bias="0.854" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:text="* Maximum image size 500KB allowed"
+            android:textSize="10sp"
+            android:textStyle="italic"
+            app:layout_constraintBottom_toTopOf="@+id/profilePicLayoutNextBtn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profilePicLayoutUploadBtn"
+            app:layout_constraintVertical_bias="0.489" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

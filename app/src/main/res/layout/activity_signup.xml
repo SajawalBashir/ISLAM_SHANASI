@@ -29,6 +29,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0">
 
+
             <ImageView
                 android:id="@+id/imgBackSignup"
                 android:layout_width="30dp"
@@ -53,72 +54,72 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.05" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editTextFirstNameSignUp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            <LinearLayout
+                android:id="@+id/linearLayoutSignup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="50dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginRight="180dp"
-                android:hint="First Name"
-                android:textColorHint="@color/black"
-                app:boxStrokeColor="@color/black"
-                app:endIconMode="none"
-                app:hintTextColor="@color/black"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toLeftOf="@id/view"
-                app:layout_constraintTop_toBottomOf="@id/textSignup">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextFirstNameSignUpChild"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/black"
-                    android:textCursorDrawable="@drawable/cursor_color"
-                    android:textSize="12sp"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/textSignup" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <View
-                android:id="@+id/view"
-                android:layout_width="4dp"
-                android:layout_height="20dp"
-                android:background="@color/white"
-                app:layout_constraintBottom_toTopOf="@+id/editTextEmailSignup"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textSignup" />
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/editTextLastNameSignUp"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="180dp"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="50dp"
-                android:hint="Last Name"
-                android:textColorHint="@color/black"
-                app:boxStrokeColor="@color/black"
-                app:endIconMode="none"
-                app:hintTextColor="@color/black"
+                android:orientation="horizontal"
+                android:weightSum="2"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintLeft_toRightOf="@id/view"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textSignup">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/editTextLastNameSignUpChild"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/editTextFirstNameSignUp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
-                    android:textColor="@color/black"
-                    android:textCursorDrawable="@drawable/cursor_color"
-                    android:textSize="12sp" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:layout_marginTop="25dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_weight="1"
+                    android:hint="First Name"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/black"
+                    app:endIconMode="none"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextFirstNameSignUpChild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="12sp"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textSignup" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/editTextLastNameSignUp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_weight="1"
+                    android:hint="Last Name"
+                    android:textColorHint="@color/black"
+                    app:boxStrokeColor="@color/black"
+                    app:endIconMode="none"
+                    app:hintTextColor="@color/black">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editTextLastNameSignUpChild"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="textCapSentences"
+                        android:textColor="@color/black"
+                        android:textCursorDrawable="@drawable/cursor_color"
+                        android:textSize="12sp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/editTextEmailSignup"
@@ -135,7 +136,7 @@
                 app:hintTextColor="@color/black"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/editTextFirstNameSignUp">
+                app:layout_constraintTop_toBottomOf="@id/linearLayoutSignup">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/editTextEmailSignupChild"
