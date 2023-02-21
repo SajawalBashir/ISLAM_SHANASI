@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">ISLAM_SHANASI</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 
     <string-array name="categories">
         <item><italic>Not Selected</italic></item>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".home_tiles.ScholarTile">
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Choose Fiqh:"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/scholarTileSpinnerFiqh"
+        app:layout_constraintEnd_toStartOf="@+id/scholarTileSpinnerFiqh"
+        app:layout_constraintHorizontal_bias="0.615"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/scholarTileSpinnerFiqh"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/scholarTileSpinnerFiqh"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginEnd="50dp"
+        android:foreground="@drawable/spinner_outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City:"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="@+id/scholarTileSpinnerCity"
+        app:layout_constraintEnd_toStartOf="@+id/scholarTileSpinnerCity"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/tv1"
+        app:layout_constraintTop_toTopOf="@+id/scholarTileSpinnerCity"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.AppCompatSpinner
+        android:id="@+id/scholarTileSpinnerCity"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="50dp"
+        android:foreground="@drawable/spinner_outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.782"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scholarTileSpinnerFiqh" />
+
+    <Button
+        android:id="@+id/ScholarTileSaveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="@+id/scholarTileSpinnerCity"
+        app:layout_constraintTop_toBottomOf="@+id/scholarTileSpinnerCity"
+        />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="20dp"
+        android:background="#9A9A9A"
+        app:layout_constraintTop_toBottomOf="@+id/ScholarTileSaveBtn"
+         />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/scholarTileRecylerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="220dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
