@@ -5,13 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.islam_shanasi.Data_Classes.Scholar
 import com.example.islam_shanasi.MainActivity
 import com.example.islam_shanasi.R
+import com.example.islam_shanasi.custom_adapters.scholarTileCustomAdapter
 import com.example.islam_shanasi.databinding.ActivityScholarTileBinding
 import com.google.firebase.database.*
 
-class ScholarTile : AppCompatActivity() {
+class ScholarTileActivity : AppCompatActivity() {
 
     lateinit var scholarTileBinding: ActivityScholarTileBinding
     lateinit var databaseReference: DatabaseReference
@@ -27,13 +29,19 @@ class ScholarTile : AppCompatActivity() {
         work()
     }
 
-    fun init(){
-        databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://islam-shanasi-default-rtdb.firebaseio.com/")
+    fun init() {
+        databaseReference = FirebaseDatabase.getInstance()
+            .getReferenceFromUrl("https://islam-shanasi-default-rtdb.firebaseio.com/")
         cities = resources.getStringArray(R.array.Cities)
         fiqh = resources.getStringArray(R.array.Fiqh)
     }
 
-    fun work(){
+    fun work() {
+        val actionBar = supportActionBar
+        if (actionBar != null) {
+            actionBar.title = "Scholars"
+        }
+
         val adapter1 = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, cities)
         val adapter2 = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, fiqh)
 
@@ -43,39 +51,44 @@ class ScholarTile : AppCompatActivity() {
         listeners()
     }
 
-    fun listeners(){
+    fun listeners() {
         var city = ""
         var fiqh = ""
-        var arraylist = ArrayList<Scholar?>()
 
         scholarTileBinding.ScholarTileSaveBtn.setOnClickListener {
+            val arraylist = ArrayList<Scholar>()
 
-            if(scholarTileBinding.scholarTileSpinnerFiqh.selectedItem.equals("Not Selected")){
+            if (scholarTileBinding.scholarTileSpinnerFiqh.selectedItem.equals("Not Selected")) {
                 Toast.makeText(this, "Select Fiqh !", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             fiqh = scholarTileBinding.scholarTileSpinnerFiqh.selectedItem.toString()
-            if(!scholarTileBinding.scholarTileSpinnerCity.selectedItem.equals("Not Selected"))
-                city = scholarTileBinding.scholarTileSpinnerCity.selectedItem.toString()
-            databaseReference.child("users").addValueEventListener(object: ValueEventListener{
+            city = scholarTileBinding.scholarTileSpinnerCity.selectedItem.toString()
+            databaseReference.child("users").addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
-                    if(snapshot.hasChild("scholars")){
+                    if (snapshot.hasChild("scholars")) {
                         val childrens = snapshot.child("scholars").children
-                        for(childID: DataSnapshot in childrens){
-                            if(!city.equals("Not Selected")){
-                                if((childID.child("fiqh").value?.equals(fiqh) == true) &&
+                        for (childID: DataSnapshot in childrens) {
+//                            println("##### Line 68 ScholarTileActivity.kt city = $city")
+                            if (city != "Not Selected") {
+//                                println("##### Line 70 ScholarTileActivity.kt list = $arraylist")
+                                if ((childID.child("fiqh").value?.equals(fiqh) == true) &&
                                     (childID.child("city").value?.equals(city) == true)
-                                ){
-                                    arraylist.add(childID.getValue(Scholar::class.java))
-                                    println("##### Line 67 ScholarTile.kt list = $arraylist")
+                                ) {
+                                    arraylist.add(childID.getValue(Scholar::class.java) as Scholar)
+//                                    println("##### Line 74 ScholarTileActivity.kt list = $arraylist")
+                                }
+                            } else {
+                                if (childID.child("fiqh").value?.equals(fiqh) == true) {
+                                    arraylist.add(childID.getValue(Scholar::class.java) as Scholar)
+//                                    println("##### Line 79 ScholarTileActivity.kt list = $arraylist")
                                 }
                             }
-
-                            if(childID.child("fiqh").value?.equals(fiqh) == true){
-                                arraylist.add(childID.getValue(Scholar::class.java))
-                                println("##### Line 67 ScholarTile.kt list = $arraylist")
-                            }
                         }
+                        scholarTileBinding.scholarTileRecylerView.layoutManager =
+                            LinearLayoutManager(this@ScholarTileActivity)
+                        scholarTileBinding.scholarTileRecylerView.adapter =
+                            scholarTileCustomAdapter(this@ScholarTileActivity, arraylist)
                     }
                 }
 

@@ -12,7 +12,15 @@
         android:theme="@style/Theme.ISLAM_SHANASI"
         tools:targetApi="31">
         <activity
-            android:name=".home_tiles.ScholarTile"
+            android:name=".ReviewActivity"
+            android:exported="false"
+            android:label="@string/title_activity_review"
+            android:theme="@style/Theme.ISLAM_SHANASI.NoActionBar" />
+        <activity
+            android:name=".recyclerView_onClicks.OnScholarsClickActivity"
+            android:exported="false" />
+        <activity
+            android:name=".home_tiles.ScholarTileActivity"
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
@@ -22,12 +30,23 @@
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+        </activity>
+        <activity
+            android:name=".TempActivity"
+            android:exported="true">
+
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+
+
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
     </application>
 

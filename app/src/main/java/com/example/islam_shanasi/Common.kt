@@ -5,7 +5,8 @@ import android.widget.EditText
 class Common {
 
     companion object {
-
+        val storageURL = "gs://islam-shanasi.appspot.com"
+        val databaseURL = "https://islam-shanasi-default-rtdb.firebaseio.com/"
         fun fieldsRequired(vararg fields: EditText): Boolean {
             var fieldsRequired = false
             fields.forEach {

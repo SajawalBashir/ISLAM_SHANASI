@@ -61,9 +61,9 @@ class SignupActivity : AppCompatActivity() {
     private fun init() {
         auth = FirebaseAuth.getInstance()
         databaseReference = FirebaseDatabase.getInstance()
-            .getReferenceFromUrl("https://islam-shanasi-default-rtdb.firebaseio.com/")
+            .getReferenceFromUrl(Common.databaseURL)
         storageReference = FirebaseStorage.getInstance()
-            .getReferenceFromUrl("gs://islam-shanasi.appspot.com")
+            .getReferenceFromUrl(Common.storageURL)
         categories = resources.getStringArray(R.array.categories)
         genders = resources.getStringArray(R.array.Gender)
         cities = resources.getStringArray(R.array.Cities)

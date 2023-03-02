@@ -17,7 +17,7 @@ import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.lifecycleScope
 import com.example.islam_shanasi.databinding.ActivityMainBinding
 import com.example.islam_shanasi.databinding.ActivityMainScholarTileClickViewBinding
-import com.example.islam_shanasi.home_tiles.ScholarTile
+import com.example.islam_shanasi.home_tiles.ScholarTileActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -73,7 +73,7 @@ class MainActivity : AppCompatActivity() {
             // it requires dependency
 //            lifecycleScope.launch {
 //                delay(50)
-                val intent = Intent(this@MainActivity, ScholarTile::class.java)
+                val intent = Intent(this@MainActivity, ScholarTileActivity::class.java)
                 startActivity(intent)
                 finish()
 //            }
